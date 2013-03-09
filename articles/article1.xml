@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XML>	
+	<TITRE>cccccékkkkkkéllllllll</TITRE>
+	<RESUME>Ceci est le premieré article de blog et l'aut</RESUME>
+	<CONTENT>Ceci l'aut est effectivement mon premier article de blog 
+	et c'est un test
+	</CONTENT>
+	<FILE_COMMENTS>com1.xml</FILE_COMMENTS>
+	<VISIBLE>true</VISIBLE>
+	<TAG>Cool</TAG>
+	<TAG>article</TAG>
+</XML>

@@ -1,0 +1,55 @@
+.blog{
+font-family:Arial;
+}
+.global{
+ ;margin-left: auto;
+ ;margin-right: auto;
+ ;width: 500px;
+float: left;
+  width: 70%;
+}
+
+.article{
+text-align: justify; 
+}
+
+.titre{
+text-align: center;
+font-family:Arial;
+background-color : #BCE954;
+font-size : 20px;
+font-style : bold;
+}
+
+.resume{
+  width: 70%;
+}
+
+.content{
+text-align: justify; 
+}
+
+.comment{
+text-align: justify; 
+}
+.un_com{
+border: 1px dotted #000000;
+padding: 3px;
+}
+.nb_com{
+text-align:right;
+font-style : italic;
+}
+
+.auteur_com{
+text-align:right;
+font-style : italic;
+}
+.tag{
+font-family:Arial;
+margin-left: 75%;
+  border: 1px solid #000000;
+  background-color : #F76541;
+ ; padding: 1em;
+}
+

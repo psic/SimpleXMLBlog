@@ -1,0 +1,11 @@
+<XML>
+	<TITRE>Mon premier article de blog</TITRE>
+	<RESUME>Ceci est le premier article de blog</RESUME>
+	<CONTENT>Ceci est effectivement mon premier article de blog 
+	et c'est un test
+	</CONTENT>
+	<FILE_COMMENTS>com1.xml</FILE_COMMENTS>
+	<VISIBLE>true</VISIBLE>
+	<TAG>Cool</TAG>
+	<TAG>article</TAG>
+</XML>

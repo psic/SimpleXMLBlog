@@ -1,0 +1,19 @@
+<XML>
+	<COM>
+		<AUTEUR>
+			<PSEUDO>toto</PSEUDO>
+			<MAIL></MAIL>
+		</AUTEUR>
+		<DATE></DATE>
+		<CONTENT>Ceci est un premier commentaire</CONTENT>
+	</COM>
+	<COM>
+		<AUTEUR>
+			<PSEUDO>titi</PSEUDO>
+			<MAIL></MAIL>
+		</AUTEUR>
+		<DATE></DATE>
+		<CONTENT>Ceci est un deuxieme commentaire</CONTENT>
+	</COM>
+
+</XML>

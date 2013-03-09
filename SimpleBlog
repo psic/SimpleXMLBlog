@@ -1,0 +1,23 @@
+
+[indentation]
+indent_width=4
+indent_type=1
+indent_hard_tab_width=8
+detect_indent=false
+indent_mode=2
+
+[project]
+name=SimpleBlog
+base_path=/home/psic/Dev/SimpleBlog
+description=
+
+[long line marker]
+long_line_behaviour=1
+long_line_column=72
+
+[files]
+current_page=3
+FILE_NAME_0=2933;PHP;0;0;1;1;0;/home/psic/Dev/SimpleBlogV1/blog.php;0;4
+FILE_NAME_1=0;PHP;0;16;1;1;0;/home/psic/Dev/SimpleBlogV1/test.php;0;4
+FILE_NAME_2=886;XML;0;16;1;1;0;/home/psic/Dev/SimpleBlogV1/articles/article1.xml;0;4
+FILE_NAME_3=45;XML;0;16;1;1;0;/home/psic/Dev/SimpleBlogV1/comments/com1.xml;0;4

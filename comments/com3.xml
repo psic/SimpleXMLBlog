@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<XML>
+	<COM>
+		<AUTEUR>
+			<PSEUDO>tuuuuuuut</PSEUDO>
+			<MAIL/>
+		</AUTEUR>
+		<DATE/>
+		<CONTENT>Ceci est un premier commentaire</CONTENT>
+	</COM>
+	<COM>
+		<AUTEUR>
+			<PSEUDO>touyout</PSEUDO>
+			<MAIL/>
+		</AUTEUR>
+		<DATE/>
+		<CONTENT>Ceci est un deuxieme commentaire</CONTENT>
+	</COM>
+
+<COM><AUTEUR><PSEUDO>llll</PSEUDO></AUTEUR><DATE>28-12-2011</DATE>
+<CONTENT>... ici j'&#xE9;cris mon commentaire ...</CONTENT></COM><COM><AUTEUR><PSEUDO>ljlk</PSEUDO><MAIL>toto@toto.tot</MAIL></AUTEUR><DATE>28-12-2011</DATE>
+<CONTENT>... ici j'&#xE9;cris mon commentaire ...</CONTENT></COM><COM><AUTEUR><PSEUDO>polo</PSEUDO><MAIL>polo@pull.net</MAIL></AUTEUR><DATE>28-12-2011</DATE>
+<CONTENT>...et le voil&#xE0; le comme ici j'&#xE9;cris mon commentaire ...</CONTENT></COM></XML>

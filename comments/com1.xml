@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XML>
+	<COM>
+		<AUTEUR>
+			<PSEUDO>toto</PSEUDO>
+			<MAIL/>
+		</AUTEUR>
+		<DATE/>
+		<CONTENT>Ceci est un premier commentaire</CONTENT>
+	</COM>
+	<COM>
+		<AUTEUR>
+			<PSEUDO>titi</PSEUDO>
+			<MAIL/>
+		</AUTEUR>
+		<DATE/>
+		<CONTENT>Ceci est un deuxieme commentaire</CONTENT>
+	</COM>
+<COM><AUTEUR><PSEUDO>mmmmmmmmmm</PSEUDO></AUTEUR><DATE>18-12-2011</DATE><CONTENT>... ici j\'écris mon commentaire ...</CONTENT></COM><COM><AUTEUR><PSEUDO>aaaaaaaaa</PSEUDO></AUTEUR><DATE>18-12-2011</DATE>
+<CONTENT> mqlkfj mqlsdkfj ' est un cometaa</CONTENT></COM><COM><AUTEUR><PSEUDO>eazeza</PSEUDO></AUTEUR><DATE>18-12-2011</DATE>
+<CONTENT>... ici j'écris mon commentaire ...</CONTENT></COM><COM><AUTEUR><PSEUDO>llllllllllll</PSEUDO></AUTEUR><DATE>18-12-2011</DATE>
+<CONTENT>... icij'écris mon commentaire ...</CONTENT></COM><COM><AUTEUR><PSEUDO>kkkkkk</PSEUDO></AUTEUR><DATE>18-12-2011</DATE>
+<CONTENT>azerty'uiop</CONTENT></COM><COM><AUTEUR><PSEUDO>xxxxxxxxxx</PSEUDO></AUTEUR><DATE>18-12-2011</DATE>
+<CONTENT>...ici j'écris mon commentaire ...</CONTENT></COM><COM><AUTEUR><PSEUDO>bbbbbbb</PSEUDO></AUTEUR><DATE>18-12-2011</DATE>
+<CONTENT>ggggggg... ici j'écris mon commentaire ...</CONTENT></COM><COM><AUTEUR><PSEUDO>wwwwwwwwwww</PSEUDO></AUTEUR><DATE>18-12-2011</DATE>
+<CONTENT>... ici j'cris mon commentaire ...</CONTENT></COM><COM><AUTEUR><PSEUDO>qqqqqq</PSEUDO></AUTEUR><DATE>18-12-2011</DATE>
+<CONTENT>... ici j'àcris mon commentaire ...</CONTENT></COM><COM><AUTEUR><PSEUDO>tourlipinpom</PSEUDO><MAIL>toto@mail.com</MAIL></AUTEUR><DATE>25-12-2011</DATE>
+<CONTENT>C'est pas trops é tôt celaé  marche enfin</CONTENT></COM></XML>

@@ -1,0 +1,10 @@
+<XML>	<TITRE>Mon troisieme article de blog</TITRE>
+	<RESUME>Ceci est le troisieme article de blog</RESUME>
+	<CONTENT>Ceci est effectivement mon troisieme article de blog 
+	et c'est un test
+	</CONTENT>
+	<FILE_COMMENTS>com3.xml</FILE_COMMENTS>
+	<VISIBLE>true</VISIBLE>
+	<TAG>Choupo</TAG>
+	<TAG>Cool</TAG>
+</XML>
