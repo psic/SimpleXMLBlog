@@ -1,10 +1,34 @@
 <?xml version="1.0"?>
-<XML>	<TITRE>Mon deuxieme article de blog</TITRE>
+<XML>
+	<TITRE>Mon deuxieme article de blog</TITRE>
 	<RESUME>Ceci est le deuxieme article de blog</RESUME>
-	<CONTENT>Ceci est effectivement mon deuxime article de blog 
-	et c'est un test
-	</CONTENT>
 	<FILE_COMMENTS>cjgpqso-1323806444.xml</FILE_COMMENTS>
+	<CONTENT>
+fsdfdsfs
+========
+ 
+**dqdsqd**
+*dd*
+	
+#dqsdqs#
+Ceci est effectivement mon troisieme article de blog
+		et c'est un test
+##kokokok##	
+fjqlfjkinv oi vlsdj
+	mlkfml
+		
+		
+*	dsad
+*	qsdqs
+*	dada
+
+1.	fff
+2.	fzfdfsd
+3.	qsdqsdqsd
+
+____________________________________________________
+	</CONTENT>
 	<VISIBLE>true</VISIBLE>
 	<TAG>Pas cool</TAG>
-	<TAG>article</TAG></XML>
+	<TAG>article</TAG>
+</XML>
