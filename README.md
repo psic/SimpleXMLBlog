@@ -3,6 +3,14 @@
 This is a bunch of php classes. They provide a blog without no database needs (kind of NoSQL) in order to be easy to install and manage.
 All your blog entries and comments are stored in XML files. Blog entries use markdown language.
 
+# Why ?
+
+I will explain
+
+# Demo
+
+I will show!
+
 # How does it work ?
 
 ## Installing this blog
@@ -59,14 +67,14 @@ For each entry, you need to specify a summary because the blog only shows a summ
 * Can add comments
 * Can open and close blog entry
 * Use markdown 
-
-## To be done
-
 * Sort entries by date
 * Sort comments by date
 * Show comments date
-* Show numbre of commments with the summary
-* Use Tag Filter
-* Use Date Filter
+
+## To be done
+
+* Show numbre of commments with the summary (V2)
+* Use Tag Filter (V2)
+* Use Date Filter (V2)
 
 for all comments send at psic_at_free_fr
