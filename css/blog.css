@@ -15,11 +15,22 @@
 }
 
 .titre {
+	background-color: #BCE954;
+}
+.LeTitre{
 	text-align: center;
 	font-family: Arial;
-	background-color: #BCE954;
 	font-size: 20px;
 	font-style: bold;
+}
+
+.dateArt{
+	font-style: italic;
+	font-size:15px;
+	text-align:left;
+	vertical-align: center;
+	padding-left:5px;
+	padding-right:100px;
 }
 
 .fleche{
@@ -28,9 +39,26 @@
 	}
 	
 .resume {
-	width: 70%;
+	//width: 100%;
+	//float:left;
 }
 
+.resumeContent{
+	//width:150px;
+	//float:left;
+}
+
+.resumeTag{
+	text-align:right;
+	font-size:15px;
+	font-style:italic;
+	border-style :dashed;
+	border-width:1px;
+	//margin-left:80%;
+	float:right;
+	padding : 5px;
+	margin-left:10px;
+}
 .content {
 	text-align: justify;
 }
@@ -58,6 +86,43 @@
 	font-family: Arial;
 	margin-left: 75%;
 	border: 1px solid #000000;
-	background-color: #F76541;;
-	padding: 1em;
+	background-color: #F76541;
+	padding: 10px;
+	margin-top: 20px;
+	margin-right:20px;
 }
+
+.year{
+	font-family: Arial;
+	margin-left: 75%;
+	border: 1px solid #000000;
+	background-color: #83F244;;
+	padding: 10px;
+	margin-top: 20px;
+	margin-right:20px;
+	list-style-type: none;
+	text-decoration: none;
+	text-align: left;
+	padding: 5px;
+	
+}
+
+.year a{
+	text-decoration: none;
+}
+
+.year li{
+	list-style-type: none;
+}
+
+.datemenu {
+	padding: 10px;
+}
+
+.year ul{
+	padding: 5px;
+	list-style-type: none;
+}
+
+
+/** I think you can add class h1, h2, .... for the markdown purpose **/

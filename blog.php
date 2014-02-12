@@ -11,25 +11,41 @@ class blog {
 	//DONE Pouvoir "refermer" un commentaire avec une fleche vers le haut, et les reouvrir, etc.. V2
 	//==> Mettre un attribut first pour savoir s'il y a besoin de recharger ou pas l'article ou juste de le montrer (unhide)	
 	//DONE gerer les DIV et autres  tag html dans les articles  V2 --> markdown
-	//GIVEUP gerer les DIV et autres  tag html dans les commentaires V2 --> mardown
+	//GIVEUP gerer les DIV et autres  tag html dans les commentaires V2 --> mardown	
+	//DONE classer les articles par date avant de les afficher V2
+	//DONE enregistrer la date et l'heure des commmentaires, et l'afficher aussi V2	
+	//DONE classer les commentaires par date avant de les afficher V2
+	//DONE faire un truc Années-->mois--> articles (commes le tag ) pour retrouver les articles chronologiquement
+	//DONE Afficher les tags (dans le titre et/ou à la fin de l'article ou du resume)
 	
-	//TODO classer les articles par date avant de les afficher V2
-	//TODO classer les commentaires par date avant de les afficher V2
-	//TODO enregistrer la date et l'heure des commmentaires, et l'afficher aussi V2
-	//TODO afficher le nombre de commentaire avec le resume au d�but V2
-
-	//TODO Gere le filtre par TAG V3
-	//TODO tester tout �a
+	
+	//TODO javascripter le formulaire de commentaire onfocus, onload pour cacher/afficher le commentaire par défaut
+	
+	//TODO LATER afficher le nombre de commentaire avec le resume au début V2
+	//TODO Gere les filtre par date V2 (argument needed)
+	//TODO Gere le filtre par TAG V2 (argument needed)
+	//TODO si visible == true et date == null mettre la date du jour et l'enregistrer dans le fichier V2
+	
+	//TODO V3 : faire un fork full XML->XSLT->HTLM avec tout les articles préchargés, et cachés
 	public static $_instance;
 	const article_rep ="articles/";
 	const com_rep ="comments/";
 	private $art_array = array();
 	private $tag_array = array();
+	private $date_array = array();
+	private $year_array = array();
 
 
 	private function __clone () {
 	}
+	
+	private function sortByDate( article $a,  article $b ) {
+		
+		return strtotime($b->getWDate()) - strtotime($a->getWDate());
+	}
+	
 	private function __construct(){
+		date_default_timezone_set('Europe/Paris');
 		$this->xml_parser = xml_parser_create();
 		xml_set_object (  $this->xml_parser, $this );
 		xml_set_element_handler($this->xml_parser, "startTagArticle", "endTagArticle");
@@ -42,17 +58,28 @@ class blog {
 			if(is_file(blog::article_rep.$f)) {
 				$article = new article();
 				$article->init(blog::article_rep.$f,blog::com_rep,$i++);
-				array_push($this->art_array,$article);
 				if ($article->isVisible() == 'true'){
+					array_push($this->art_array,$article);
 					foreach ($article->getTags() as $tag){
 						if(!in_array($tag,$this->tag_array))
 							array_push($this->tag_array,$tag);
 					}
+					array_push($this->date_array, $article->getWDate());
+					$year = date('Y', strtotime($article->getWDate()));
+					if (!(in_array($year, $this->year_array))) {
+						array_push($this->year_array, $year);
+					}
 				}
 			}
 		}
+		
+		//sort blog article array by date
+	
+		usort($this->art_array, array($this,"sortByDate"));
 
 	}
+	
+	
 
 	public static function getInstance () {
 		if (!(self::$_instance instanceof self))
@@ -71,11 +98,27 @@ class blog {
 			$article->affiche();
 		}
 		echo '</DIV>';
+		$self = $_SERVER['PHP_SELF'];
 		echo '<DIV class="tag"><UL>';
 		foreach ($this->tag_array as $tag){
 			echo '<LI>'. $tag .'</LI>';
 		}
 		echo '</UL></DIV>';
+		echo '<DIV class="year"><UL>';
+		foreach ($this->year_array as $year){
+			echo '<LI><span class="signe"></span><a class=\'yearmenu\' href='.$self. '?y='. $year .'>'.$year .'</a><UL>';
+			//foreach ($this->date_array as $date)
+				foreach ($this->art_array as $article){
+				$artdate = $article->getWDate();
+				$yearofdate = date('Y', strtotime($artdate));
+				if ($yearofdate == $year){
+					echo '<LI><a class=\'datemenu\' href='.$self. '?id='. $article->getId() .'> * '. $artdate . ' : ' . $article->getTitle() . '</a></LI>';
+				}
+			}
+			echo '</UL></LI>';
+		}
+		echo '</UL></DIV>';
+		echo '</DIV>';
 		echo '</DIV>';
 		echo '</body></html>';
 	}
@@ -179,6 +222,25 @@ class blog {
 
 				$(document).ready( function()
 				{
+				//	$(".year a").next().hide();
+					$("a.yearmenu").next().hide();
+					$("span.signe").append("+ ");
+					$("span.signe").css("cursor", "pointer");
+					$("span.signe").click(function() {
+						//$(this).next().toggle(1000);
+						
+						// switch the plus to a minus sign or vice-versa
+						var v = $(this).html().substring( 0, 1 );
+						if ( v == "+" ){
+							$(this).html( "-" + $(this).html().substring( 1 ) );
+							$(this).parent().children("a.yearmenu").next().show();
+						}
+						else if ( v == "-" ){
+							$(this).html( "+" + $(this).html().substring( 1 ) );
+							$(this).parent().children("a.yearmenu").next().hide();
+						}
+					});
+				
 					$(".fleche a").click(function()
 					{	
 						var open = $(this).parent().parent().parent().attr("state");
@@ -193,7 +255,7 @@ class blog {
 									// this article is close, open it
 									loadXMLDoc(Myid);
 									//hide resume
-									$(this).parent().parent().parent().children(".resume").hide();
+									$(this).parent().parent().parent().children().children(".resumeContent").hide();
 							
 									//hide right arrow
 									//$(this).parent().parent().children(".fleche").children().remove();
@@ -218,7 +280,7 @@ class blog {
 									$(this).parent().parent().children(".fleche").children("[sens=droit]").show();					
 				
 									//show resume
-									$(this).parent().parent().parent().children(".resume").show();
+									$(this).parent().parent().parent().children().children(".resumeContent").show();
 				
 									$(this).parent().parent().parent().children(".content").show();
 									$(this).parent().parent().parent().children(".comment").show();
@@ -232,7 +294,7 @@ class blog {
 
 									// this article is close, open it, hide resume
 									//hide resume
-									$(this).parent().parent().parent().children(".resume").hide();
+									$(this).parent().parent().parent().children().children(".resumeContent").hide();
 									//remove right arrow
 									$(this).parent().parent().children(".fleche").children("[sens=droit]").hide();
 											
@@ -254,7 +316,7 @@ class blog {
 									$(this).parent().parent().children(".fleche").children("[sens=droit]").show();					
 								
 									//show resume
-									$(this).parent().parent().parent().children(".resume").show();
+									$(this).parent().parent().parent().children().children(".resumeContent").show();
 
 									$(this).parent().parent().parent().children(".content").hide();
 									$(this).parent().parent().parent().children(".comment").hide();

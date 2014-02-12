@@ -2,12 +2,13 @@
 require './commentaire.php';
 class article {
 
-	private $articleSection; // 0 = rien, 1 = resume, 2=content, 3=fichier_comment,4=visible,5=titre,6=tag
+	private $articleSection; // 0 = rien, 1 = resume, 2=content, 3=fichier_comment,4=visible,5=titre,6=tag,7=date
 	private $resumeArticleCourant;
 	private $contentArticleCourrant;
 	private $fichier_comArticleCourant;
 	private $visibleArticleCourant;
 	private $titreArticleCourant;
+	private $dateArticleCourant;
 	private $xml_parser;
 	private $comm_rep;
 	private $comm;
@@ -68,6 +69,9 @@ class article {
 			case "TAG":
 				$this->articleSection = 6;
 				break;
+			case "DATE":
+				$this->articleSection = 7;
+				break;
 			default:
 				$this->articleSection = 0;
 				break;
@@ -96,6 +100,9 @@ class article {
 		if ($this->articleSection == 6){
 			array_push($this->tag_array,$data);
 		}
+		if ($this->articleSection == 7){
+			$this->dateArticleCourant .= $data;
+		}
 	}
 
 	function endTagArticle($parser, $data){
@@ -118,6 +125,9 @@ class article {
 			case "TAG":
 				$this->articleSection = 0;
 				break;
+			case "DATE":
+				$this->articleSection = 0;
+				break;
 			default:
 				$this->articleSection = 0;
 				break;
@@ -130,14 +140,29 @@ class article {
 		{
 			echo '<BR><DIV class="article" state="close" first="false" id="'. $this->id . '">';
 			echo '<DIV class="titre">';
+			echo '<SPAN class="dateArt">';
+			echo $this->dateArticleCourant;
+			echo '</SPAN>';
+			echo '<SPAN class="LeTitre">';
 			echo $this->titreArticleCourant;
+			echo '</SPAN>';
 			echo '<DIV class="fleche">';
 			echo ' <a  href="#" sens="droit"><img src="./ressource/fleche-droite.png"/></a>';
 			echo ' <a  href="#" style="display: none;" sens="bas"><img src="./ressource/fleche-bas.png"/></a>';
 			echo '</DIV>';
 			echo '</DIV><BR>';
 			echo '<DIV class="resume">';
+			echo '<SPAN class= "resumeTag">';
+			$tags ="";
+			foreach ($this->tag_array as $tag){
+				$tags =$tags . $tag . ' / ';
+			}
+			$tags = substr($tags,0, strlen($tags) -2);
+			echo $tags;
+			echo '</SPAN>';
+			echo '<SPAN class="resumeContent">';
 			echo $this->resumeArticleCourant ;
+			echo '</SPAN>';
 			//echo ' <a id="'. $this->id . '" href="#"><img src="./ressource/fleche-droite.png"/></a>';
 			echo '</DIV>';
 			echo '<DIV class="content"></DIV>';
@@ -146,6 +171,9 @@ class article {
 		}
 	}
 
+	function getTitle(){
+		return $this->titreArticleCourant;
+	}
 	function getArticleContent(){
 		return $this->contentArticleCourrant;
 	}
@@ -171,6 +199,10 @@ class article {
 		return $this->tag_array;
 	}
 
+	function getWDate()
+	{
+		return $this->dateArticleCourant;
+	}
 
 	function isVisible(){
 		if($this->visibleArticleCourant == 'true')

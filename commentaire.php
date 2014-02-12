@@ -126,8 +126,17 @@ class commentaire {
 		}
 	}
 
+	private function sortByDate(  $a,   $b ) {
+	
+		return strtotime($a['date']) - strtotime($b['date']);
+	}
+	
 	function getCom(){
 		$comms= "";
+		// sort commentaires by date
+		
+		usort($this->comm_array, array($this,"sortByDate"));
+		
 		foreach ($this->comm_array as $com){
 
 			$comms = $comms . '<BR><DIV class="un_com">';
@@ -136,6 +145,8 @@ class commentaire {
 			$comms = $comms . 'par ' . $com['pseudo'];
 			if ($com['mail']!="")
 				$comms = $comms . ' / ' . $com['mail'];
+			if ($com['date']!="")
+				$comms = $comms . ' , le ' . $com['date'];
 			$comms = $comms . '</DIV></DIV>';
 		}
 		return $comms;

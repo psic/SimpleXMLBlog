@@ -1,2 +1,8 @@
 <?xml version="1.0"?>
-<COM><AUTEUR><PSEUDO>mlkmlk</PSEUDO></AUTEUR><DATE>2011-12-14</DATE><CONTENT>... ici j'&#xE9;cris mon commentaire ...</CONTENT></COM>
+<COM>
+	<AUTEUR>
+		<PSEUDO>mlkmlk</PSEUDO>
+	</AUTEUR>
+	<DATE>2011-12-14</DATE>
+	<CONTENT>... ici j'&#xE9;cris mon commentaire ...</CONTENT>
+</COM>
