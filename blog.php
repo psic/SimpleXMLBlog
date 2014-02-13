@@ -356,8 +356,11 @@ class blog {
 				{
 				var myobject ;
 				myobject = JSON.parse(xmlhttp.responseText);
-				$("#" + myobject.id).parent().next("div").next("div").prepend(myobject.com );
-				$("#" + myobject.id).closest(".article").find(".nb_com").replaceWith(myobject.nbcom);
+				//dynamicilly update current coms.
+				//$("#" + myobject.id).parent().next("div").next("div").prepend(myobject.com );
+				//$("#" + myobject.id).closest(".article").find(".nb_com").replaceWith(myobject.nbcom);
+				$("#" + myobject.id).children(".comment").append(myobject.com );
+				$("#" + myobject.id).children(".content").children(".nb_com").replaceWith(myobject.nbcom);
 	}
 	}
 				xmlhttp.open("POST","ajaxRouteur.php",true);

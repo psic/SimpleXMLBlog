@@ -3,13 +3,19 @@
 This is a bunch of php classes. They provide a blog without no database needs (kind of NoSQL) in order to be easy to install and manage.
 All your blog entries and comments are stored in XML files. Blog entries use markdown language.
 
+# Requirements
+Need to run under php 5.3 (php-markdown need it!)
+or you can make a workaround with [simple-json](http://code.google.com/p/simplejson-php/) and [the classic php-markdown lib](http://michelf.ca/projects/php-markdown/classic/)
+
 # Why ?
 
-I will explain
+I tried to have a blog, or I would like to have a kind of collaborative blog hosted on my home server. I tried to use a free CMS (I do not remember the name).
+WTF!!! I was wondering why I had to use a database overly complicated and a web interface as blog backoffice with too much menu and item, and I was not
+able to tune it very accurately. As I know css, html, php then I thought it is better to make it easier!
 
 # Demo
 
-I will show!
+[Demo Here!](http://psic.free.fr/blog/test.php)
 
 # How does it work ?
 
@@ -73,8 +79,9 @@ For each entry, you need to specify a summary because the blog only shows a summ
 
 ## To be done
 
-* Show numbre of commments with the summary (V2)
+* Show number of commments with the summary (V2)
 * Use Tag Filter (V2)
 * Use Date Filter (V2)
+
 
 for all comments send at psic_at_free_fr

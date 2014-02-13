@@ -175,7 +175,7 @@ class commentaire {
 				<textarea name='com' id='com' rows='4' cols='122'>... ici j'écris mon commentaire ...</textarea>
 				</div>
 				pseudo : <input type='text' name='pseudo' id='pseudo'/> mail : <input type='text' name='mail' id='mail'/>
-				<input type='button' value='Commenter' onClick='enregistre_com(this.form.com.value,this.form.pseudo.value,this.form.mail.value,$(this).closest(\".article\").find(\".resume a\").attr(\"id\")); this.form.reset();' />
+				<input type='button' value='Commenter' onClick='enregistre_com(this.form.com.value,this.form.pseudo.value,this.form.mail.value,$(this).closest(\".article\").attr(\"id\")); this.form.reset();' />
 				</div></form></div>";
 		return $form;
 	}
