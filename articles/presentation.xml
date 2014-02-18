@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XML>
+	<TITRE>Présentation</TITRE>
+	<RESUME>Un premier article de blog pour se présenter : moi, le blog et sa techno (php + XML + markdown)</RESUME>
+	<CONTENT>Un premier article de blog faire **les** présentations.
+Se présenter tout d'abord, présenter ce blog, la technologie qu'il utilise, et surtout le montrer en action
+
+#Mon blog#
+
+Super, j'ai un blog...oui et après ?!
+
+##Moi##
+
+Pas grand chose à dire sur ma personne, si ce n'est que je suis l'auteur de ce      blog et des classes php qu'il utilise, peut-être en apprendra-t-on plus, plus tard, au fil des articles développés ici.
+
+##Ce blog##
+
+A mon avis, j'y parlerais essentiellement de technologie, d'informatique et peut-être même surement, quelques fois, du monde qui m'entoure.
+
+#La techno#
+
+Ce qui nous intéresse principalement aujourd’hui'hui, le comment ça marche ? Et oui, car ce blog a une particularité, c'est un blog qui n'est pas réalisé chez un hébergeur spécialisé de blog comme blogspot, et ce n'est pas non plus un blog qui utilise un CMS, d'ailleurs, il n'utilise pas de base de données (NoSQL comme on pourrait dire...mouarff!)...juste des fichiers XML, du CSS, et du php tout fait. Rien de bien compliqué! KISS!
+
+##php et XML##
+
+A avoir essayer d'avoir un blog en auto-hébergement, j'ai capitulé devant la complexité du plus simple des CMS, beurk, une grosse base de données mal foutue, des feuilles de styles mal foutues, une gestion d'admin mal foutue...bref, pour un mec qui connaissait un peu le php, le css et le web, c'etait bien plus complicant que facilitant. Hop-Hop-Hop, quelques 3, 4 classes php plus tard (même si cela c'est fait sur 3, 4 ans), j'ai fait un ensemble de classes php qui fournisse un blog sans base de données, avec du style en CSS, et que si vous voulez faire un truc collaboratif, vous utiliserez les droits d'accès UNIX pour gérer tout cela, et pour faire des sauvegardes et des versions de vos articles, y'a SVN par exemple qui fait ça très bien.
+
+Tout ce que vous avez à faire pour l'utiliser est expliquer [là](https://github.com/psic/SimpleXMLBlog). Pour la rédaction des articles, ce sont des fichiers XML très simples à ranger dans un répertoire. Pour le style, tu te sorts les doigts et tu faits ton CSS.
+
+ 
+
+##Markdown
+
+L'autre particularité, c'est que j'écris mes articles en utilisant markdown et que ça c'est vachement bien.
+
+	</CONTENT>
+	<FILE_COMMENTS>com1.xml</FILE_COMMENTS>
+	<VISIBLE>true</VISIBLE>
+	<DATE>18-02-2014</DATE>
+	<TAG>presentation</TAG>
+	<TAG>php</TAG>
+	<TAG>markdown</TAG>
+	<TAG>xml</TAG>
+</XML>
